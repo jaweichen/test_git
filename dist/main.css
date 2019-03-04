@@ -1,0 +1,26 @@
+#app{
+    font-size:30px;
+    color:rgb(104, 153, 226);
+    font-weight:bold;
+}
+h1 a[data-v-35fbf2b0]{
+    color:#3399ff;
+    font-size:24px;
+}
+
+button{
+    border:0;
+    outline:none;
+    color:#fff;
+    padding:4px 8px;
+}
+button:active{
+    position:relative;
+    top:1px;
+    left:1px;
+}
+
+div[data-v-381730fa]{
+    color:#f60;
+    font-size:24px;
+}
