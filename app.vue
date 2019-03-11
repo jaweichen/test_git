@@ -4,7 +4,9 @@
         <v-title title="Vue 元件化"></v-title>
         <v-button @click="handleClick">點擊按鈕</v-button>
         <br/>
-        <img src="./image/magicbox.png" style="max-width:100%;height:auto;"/>
+        <img src="./image/magicbox.png" style="max-width:40%;height:auto;"/>
+        <router-view></router-view>
+        
     </div>
 
 </template>

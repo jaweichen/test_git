@@ -1,8 +1,4 @@
-#app{
-    font-size:30px;
-    color:rgb(104, 153, 226);
-    font-weight:bold;
-}
+
 h1 a[data-v-35fbf2b0]{
     color:#3399ff;
     font-size:24px;
@@ -24,3 +20,21 @@ div[data-v-381730fa]{
     color:#f60;
     font-size:24px;
 }
+
+.work[data-v-01a29953]{
+  color:rgb(102, 224, 112);
+  font-weight:bold;
+  text-decoration:none;
+}
+.work[data-v-01a29953]:active{
+    color:#000;
+    font-weight:bold;
+    text-decoration:none;
+}
+.router-link-active[data-v-01a29953]{
+    font-weight:bold;
+    text-decoration:none;
+    color:#000;
+}
+
+/*# sourceMappingURL=main.css.map*/

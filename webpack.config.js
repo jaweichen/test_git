@@ -1,25 +1,19 @@
-const path=require("path");
-const ExtractTextPlugin=require("extract-text-webpack-plugin");
-const VueLoaderPlugin=require("vue-loader/lib/plugin");
+var path=require('path');
+var ExtractTextPlugin=require('extract-text-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-module.exports={
+var config={
     entry:{
-        main:"./main.js"
+        main:'./main'
     },
     output:{
-        filename:"main.js",
-        publicPath:"./dist/",
-        path:path.join(__dirname,"./dist")
+        path:path.resolve(__dirname,'./dist'),
+        publicPath:'./dist/',
+        filename:'[name].js',
+        chunkFilename:'[name].chunk.js'
     },
     module:{
         rules:[
-            {
-                test:/\.css$/,
-                use:ExtractTextPlugin.extract({
-                    use:"css-loader",
-                    fallback:"style-loader"
-                })
-            },
             {
                 test:/\.vue$/,
                 loader:'vue-loader',
@@ -38,16 +32,26 @@ module.exports={
                 exclude:/node_modules/
             },
             {
-                test:/\.(gif|jpg|png|woff|svg|eot|ttf)??.*$/,
-                loader:'url-loader?limit=1024'
+                test:/\.css$/,
+                use:ExtractTextPlugin.extract({
+                    use:'css-loader',
+                    fallback:'style-loader'
+                })
+            },
+            {
+                test:/\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+                loader:'url-loader?limit=1024'//?limit=1024是指如果這個檔案小於1kb,就以 base64 的形式載入,不會產生一個檔案
             }
         ]
     },
     plugins:[
+        new VueLoaderPlugin(),
         new ExtractTextPlugin({
-            filename:"[name].css",
+            filename:'[name].css',
             allChunks:true
-        }),
-        new VueLoaderPlugin()
-    ]
+        })
+    ],
+    devtool:'source-map'
 }
+
+module.exports=config;
